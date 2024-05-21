@@ -1,0 +1,45 @@
+#detailProduct{
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+}
+
+#detailProduct  div {
+  width: 50%;
+  padding: 1rem;
+}
+
+.containerImagen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.containerImagen div {
+  text-align: center;
+}
+.containerImagen img {
+  width: 200px;
+}
+
+.containerInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.containerInfo button {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.7rem;
+  border-radius: 8px;
+}

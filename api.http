@@ -1,0 +1,21 @@
+###
+GET http://localhost:3008/api/productos
+
+###
+GET http://localhost:3008/api/productos/20
+
+###
+POST http://localhost:3008/api/productos
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "pantalon",
+  "price": 10.99,
+  "description": "remera.",
+  "category": "men's clothing",
+  "rating": {
+    "rate": 4.8,
+    "count": 10
+  }
+}

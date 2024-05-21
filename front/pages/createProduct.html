@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <title>Document</title>
+
+  <style>
+    h1{
+      text-align: center;
+    }
+    form{
+      width: 80%;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cargar un nuevo producto</h1>
+  <form enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="title">
+    <input type="text" name="category" placeholder="category">
+    <input type="text" name="description" placeholder="description">
+    <input type="number" name="price" placeholder="price">
+    <input type="number" name="id" placeholder="id">
+    <input type="number" name="rate" placeholder="rate">
+    <input type="number" name="count" placeholder="count">
+    <input type="file" name="imagenproducto">
+    <button>Cargar producto</button>
+  </form>
+
+  <script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      let input = e.target
+      // let body = {
+      //   title: input.title.value,
+      //   category: input.category.value,
+      //   description:input.description.value,
+      //   price: input.price.value,
+      //   id: input.id.value,
+      //   rating:{
+      //     rate: input.rate.value ,
+      //     count: input.count.value ,
+      //   }
+      // }
+      // console.log(body);
+      let producto = new FormData(form)
+      fetch('http://localhost:3008/api/productos',{
+        method: 'POST',
+        body: producto 
+      })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => alert(err))
+    })
+  </script>
+</body>
+</html>
